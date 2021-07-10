@@ -27,7 +27,7 @@ public class DistanceManager {
     public static void update(HumanEntity entity) {
         int blocks;
 
-        if (DeathRunEventManager.isRunning()) {
+        if (DeathRunEventManager.isRunning() && entity.getGameMode().equals(GameMode.SURVIVAL)) {
             blocks = Math.max(entity.getLocation().getBlockZ(), 0);
             DISTANCES.put(entity.getUniqueId(), blocks);
         } else {
