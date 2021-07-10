@@ -1,0 +1,7 @@
+name: DeathRunEvent
+version: @version@
+main: tk.booky.deathrunevent.DeathRunEventMain
+api-version: 1.17
+prefix: DRE
+authors: [ booky10 ]
+website: https://booky.tk/
