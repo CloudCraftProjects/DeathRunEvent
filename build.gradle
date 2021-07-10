@@ -1,0 +1,27 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group = 'tk.booky'
+version = '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
+
+repositories {
+    maven { url = 'https://papermc.io/repo/repository/maven-public/' }
+}
+
+dependencies {
+    implementation 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+}
+
+processResources {
+    duplicatesStrategy(DuplicatesStrategy.INCLUDE)
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}
